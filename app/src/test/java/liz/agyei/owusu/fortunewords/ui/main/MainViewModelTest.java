@@ -35,10 +35,10 @@ public class MainViewModelTest {
     @Rule
     public InstantTaskExecutorRule instantExecutorRule = new InstantTaskExecutorRule();
 
-    @Mock
+
     FortuneRepository repository;
 
-    @Mock
+
     RetrofitFortuneInterface apiClient;
 
     private MainViewModel viewModel;
@@ -67,7 +67,6 @@ public class MainViewModelTest {
         apiClient = spy(Mockito.mock(RetrofitFortuneInterface.class, RETURNS_DEEP_STUBS));
         repository = spy(FortuneRepository.getInstance(apiClient));
         viewModel = spy(new MainViewModel(repository));
-        System.out.println(viewModel.getFortuneWords());
         Observable<Fortune> obs = apiClient.getFortunes().toObservable();
         TestObserver<Fortune> testObserver = TestObserver.create();
         obs.subscribe(testObserver);
