@@ -33,6 +33,7 @@ public class FortunesDataSource {
     }
 
     public void getFortunesFromAPI(){
+
         //Show ProgressDialog at the start of Activity
         _isProgressShowing.postValue(true);
         compositeDisposable.add(
@@ -62,7 +63,4 @@ public class FortunesDataSource {
         fortune.setFortuneList(list);
         return fortune;
     }
-
-
-
 }
