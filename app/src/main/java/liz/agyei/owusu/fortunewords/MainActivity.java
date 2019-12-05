@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel = new MainViewModel(FortuneRepository.getInstance(new RetrofitFortuneClient().getClient()));
         binding.setViewmodel(mainViewModel);
         binding.setLifecycleOwner(this);
-
     }
 
 }

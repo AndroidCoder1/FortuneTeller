@@ -10,10 +10,9 @@ import java.util.List;
 
 import liz.agyei.owusu.fortunewords.utils.Configs;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
 public class FortuneTest {
 
@@ -31,7 +30,6 @@ public class FortuneTest {
         fortune.setFortuneList(fortunes);
 
         MockitoAnnotations.initMocks(this);
-       // when(fortune.getFortuneList()).thenReturn(fortunes);
     }
 
 

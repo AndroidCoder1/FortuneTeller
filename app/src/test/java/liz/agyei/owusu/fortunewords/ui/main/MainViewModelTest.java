@@ -78,6 +78,7 @@ public class MainViewModelTest {
     @After
     public void tearDown() throws Exception {
         apiClient = null;
+        repository = null;
         viewModel = null;
         RxJavaPlugins.reset();
     }

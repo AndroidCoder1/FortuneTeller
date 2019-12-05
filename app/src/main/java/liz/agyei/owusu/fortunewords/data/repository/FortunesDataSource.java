@@ -41,22 +41,18 @@ public class FortunesDataSource {
                     //Retry till we get valid response
                     .retry(throwable ->{
                         System.out.println(">>>"+throwable.getMessage());
-                       return true;
-                    } )
+                        return true;
+                    })
                     //Cancel the thread after 10 seconds and show default message
                     .timeout(10, TimeUnit.SECONDS)
                     .subscribe(fortunes -> {
-                        System.out.println("Fortunes" + fortunes);
                         _isProgressShowing.postValue(false);
                         _fortunes.postValue(fortunes);
                     }, throwable -> {
-                        System.out.println("Fortunes Error"+throwable.getMessage());
                         _isProgressShowing.postValue(false);
                         _fortunes.postValue(hardCodedFortuneAdvice());
                     })
         );
-        //fortunes = _fortunes;
-        //return fortunes;
     }
 
     private Fortune hardCodedFortuneAdvice(){

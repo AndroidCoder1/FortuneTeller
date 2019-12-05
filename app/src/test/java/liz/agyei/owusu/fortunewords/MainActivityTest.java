@@ -34,6 +34,7 @@ public class MainActivityTest {
 
     @After
     public void tearDown() throws Exception {
+        fortune = null;
     }
 
     @Test
