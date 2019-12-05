@@ -31,7 +31,7 @@ public class FortuneTest {
         fortune.setFortuneList(fortunes);
 
         MockitoAnnotations.initMocks(this);
-        when(fortune.getFortuneList()).thenReturn(fortunes);
+       // when(fortune.getFortuneList()).thenReturn(fortunes);
     }
 
 

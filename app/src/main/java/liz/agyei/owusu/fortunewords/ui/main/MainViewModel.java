@@ -14,7 +14,7 @@ public class MainViewModel extends ViewModel {
     }
 
     public LiveData<Fortune> getFortuneWords(){
-        return this.repository.getFortunes();
+        return repository.getFortunes();
     }
 
     public LiveData<Boolean> isProgressShowing(){
@@ -24,6 +24,7 @@ public class MainViewModel extends ViewModel {
     @Override
     protected void onCleared() {
         super.onCleared();
-        repository.compositeDisposable.clear();
+        repository.compositeDisposable.dispose();
     }
+
 }

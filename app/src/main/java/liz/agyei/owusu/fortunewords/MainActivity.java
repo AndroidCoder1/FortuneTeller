@@ -11,6 +11,7 @@ import liz.agyei.owusu.fortunewords.databinding.MainActivityBinding;
 import liz.agyei.owusu.fortunewords.ui.main.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
+    MainViewModel mainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Binding to layout and attaching to ViewModel and Lifecycle
         MainActivityBinding binding =  DataBindingUtil.setContentView(this, R.layout.main_activity);
-        MainViewModel mainViewModel = new MainViewModel(FortuneRepository.getInstance(new RetrofitFortuneClient().getClient()));
+        mainViewModel = new MainViewModel(FortuneRepository.getInstance(new RetrofitFortuneClient().getClient()));
         binding.setViewmodel(mainViewModel);
         binding.setLifecycleOwner(this);
 
     }
+
 }

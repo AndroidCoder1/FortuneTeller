@@ -34,8 +34,8 @@ public class FortuneRepository {
         return fortunesDataSource.getIsProgressShowing();
     }
 
-    public LiveData<Fortune> getFortunesFromAPI(CompositeDisposable compositeDisposable){
+    public void getFortunesFromAPI(CompositeDisposable compositeDisposable){
         fortunesDataSource = new FortunesDataSource(api, compositeDisposable);
-        return fortunesDataSource.getFortunesFromAPI();
+        fortunesDataSource.getFortunesFromAPI();
     }
 }
